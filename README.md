@@ -1,7 +1,7 @@
 workflow short reference:
 
 GIT
-
+https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository
 #init new version control on dir
 
 
