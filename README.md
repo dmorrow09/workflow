@@ -21,6 +21,21 @@ GITHUB
 
 $:
 
+VIM
+
+quit without save :q!
 
 
+DOCKER
 
+FROM node:12.16.3   (base image package )
+WORKDIR /basedirectory
+ENV PORT 80
+COPY package.json /code/package.json   
+                    (copy in package and package dependencies)
+
+RUN npm install 
+                    (install dependencies with n.. package manager)
+COPY ./code         (copy source code into directory)
+CMD [ "node", "scr/server.js" ]    
+                    (call "node" and pass it in "server.js")
