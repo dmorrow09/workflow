@@ -14,5 +14,13 @@ git status //check state of tracked files
            // -s for short
 git add //add file or dir to tracking
         //"add precisely this file to  the next commit"
+        //-A add all
+git remote add origin git@github.com:username/reponame
+
+GITHUB
+
+$:
+
+
 
 
