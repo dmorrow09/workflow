@@ -16,7 +16,7 @@ git add //add file or dir to tracking
         //"add precisely this file to  the next commit"
         //-A add all
 git remote add origin git@github.com:username/reponame
-git push -u -f origin master
+git push -u -f origin main
         // -u for set origin as default
         //-f for force if you need to overwrite
 
@@ -29,6 +29,16 @@ VIM
 quit without save :q!
 save and quit :wq
 
+
+GO
+
+build and install program
+https://www.digitalocean.com/community/tutorials/how-to-build-and-install-go-programs
+
+go mod init github.com/name/repo
+go mod tidy         //get dependencies
+go build            //create executable
+/.name              //run name
 
 DOCKER
 
