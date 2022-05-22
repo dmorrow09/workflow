@@ -16,6 +16,9 @@ git add //add file or dir to tracking
         //"add precisely this file to  the next commit"
         //-A add all
 git remote add origin git@github.com:username/reponame
+git push -u -f origin master
+        // -u for set origin as default
+        //-f for force if you need to overwrite
 
 GITHUB
 
@@ -24,6 +27,7 @@ $:
 VIM
 
 quit without save :q!
+save and quit :wq
 
 
 DOCKER
@@ -39,3 +43,7 @@ RUN npm install
 COPY ./code         (copy source code into directory)
 CMD [ "node", "scr/server.js" ]    
                     (call "node" and pass it in "server.js")
+
+
+
+docker images (list of images on local machine)
