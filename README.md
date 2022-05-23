@@ -63,6 +63,20 @@ RUN go build -o /docker-gs-ping
 EXPOSE 8080
 
 CMD [ "/docker-gs-ping" ]
+    
+docker image tag docker-gs-ping:latest docker-gs-ping:v1.0. /tag image with additional tab
+
+docker image rm docker-gs-ping:v1.0         //rm docker img
+
+docker run docker-gs-ping                  //run container
+(curl localport:8080 will fail)
+docker run --publish 8080:8080 docker-gs-ping //expose port 8080 to port 8080 on the host.
+
+docker ps                                   //lists containers running on machine
+                                            // -all shows all active and inactive
+                                            
+k
+docker stop "name" or "ID"
 
 
 A build context is the set of files located in the specified path or URL. The Docker build process can access any of the files located in the context.
