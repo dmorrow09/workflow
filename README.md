@@ -41,19 +41,36 @@ go build            //create executable
 /.name              //run name
 
 DOCKER
+build docker image 
+https://docs.docker.com/language/golang/build-images/
+basic golang Dockerfile : https://github.com/olliefr/docker-gs-ping
 
-FROM node:12.16.3   (base image package )
-WORKDIR /basedirectory
-ENV PORT 80
-COPY package.json /code/package.json   
-                    (copy in package and package dependencies)
+EXAMPLE:
+# syntax=docker/dockerfile:1
 
-RUN npm install 
-                    (install dependencies with n.. package manager)
-COPY ./code         (copy source code into directory)
-CMD [ "node", "scr/server.js" ]    
-                    (call "node" and pass it in "server.js")
+FROM golang:1.16-alpine
+
+WORKDIR /app
+
+COPY go.mod ./
+COPY go.sum ./
+RUN go mod download
+
+COPY *.go ./
+
+RUN go build -o /docker-gs-ping
+
+EXPOSE 8080
+
+CMD [ "/docker-gs-ping" ]
 
 
+A build context is the set of files located in the specified path or URL. The Docker build process can access any of the files located in the context.
 
-docker images (list of images on local machine)
+The build command optionally takes a --tag flag. This flag is used to label the image with a string value, which is easy for humans to read and recognise. If you do not pass a --tag, Docker will use latest as the default value.
+
+An image is made up of a manifest and a list of layers. In simple terms, a “tag” points to a combination of these artifacts.
+
+multistage builds :https://docs.docker.com/develop/develop-images/multistage-build/
+
+
